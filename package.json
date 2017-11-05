@@ -14,6 +14,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "freeze-dry": "^0.1.0",
     "webextension-polyfill": "^0.2.1"
   }
 }
