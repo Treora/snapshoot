@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "scripts": {
+    "build": "browserify -t babelify src/background -o extension/background.js && browserify -t babelify src/content.js -o extension/content.js",
+    "watch": "watchify -t babelify src/background -o extension/background.js -v | : | watchify -t babelify src/content.js -o extension/content.js -v"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.2.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "My Extension",
+    "description": "Some WebExtension.",
+    "version": "0.0.0",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }],
+    "permissions": [
+        "<all_urls>"
+    ],
+    "applications": {
+        "gecko": {"id": "someid@someid"}
+    },
+    "manifest_version": 2
+}

@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "firefox": "56",
+        "chrome": "62"
+      }
+    }],
+    "stage-3",
+  ]
+}
