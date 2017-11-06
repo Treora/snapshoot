@@ -1,8 +1,8 @@
 {
-  "name": "test",
+  "name": "Snapshoot",
   "scripts": {
-    "build": "browserify -t babelify src/background -o extension/background.js && browserify -t babelify src/content.js -o extension/content.js",
-    "watch": "watchify -t babelify src/background -o extension/background.js -v | : | watchify -t babelify src/content.js -o extension/content.js -v"
+      "build": "cp node_modules/webextension-polyfill/dist/browser-polyfill.js extension && browserify -t babelify src/background.js -o extension/background.js && browserify -t babelify src/content.js -o extension/content.js",
+    "watch": "cp node_modules/webextension-polyfill/dist/browser-polyfill.js extension && watchify -t babelify src/background -o extension/background.js -v | : | watchify -t babelify src/content.js -o extension/content.js -v"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "freeze-dry": "^0.1.0",
+    "lodash": "^4.17.4",
     "webextension-polyfill": "^0.2.1"
   }
 }

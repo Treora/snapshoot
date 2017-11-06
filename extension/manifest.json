@@ -1,17 +1,25 @@
 {
-    "name": "My Extension",
-    "description": "Some WebExtension.",
-    "version": "0.0.0",
+    "name": "Snapshoot",
+    "description": "Simple button to snapshot and upload a webpage.",
+    "version": "0.1.0",
+    "icons": {
+      "48": "/icons/icon48.png",
+      "96": "/icons/icon96.png"
+    },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["browser-polyfill.js", "background.js"]
     },
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js": ["content.js"],
+        "js": ["browser-polyfill.js", "content.js"],
         "run_at": "document_end"
     }],
+    "browser_action": {
+        "default_title": "Snapshoot"
+    },
     "permissions": [
-        "<all_urls>"
+        "<all_urls>",
+        "notifications"
     ],
     "applications": {
         "gecko": {"id": "someid@someid"}

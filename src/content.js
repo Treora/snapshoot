@@ -1,10 +1,6 @@
-import browser from 'webextension-polyfill'
 import freezeDry from 'freeze-dry'
+import { makeRemotelyCallable } from './webextensionRPC'
 
-window.setTimeout(
-  async () => {
-    const html = await freezeDry()
-    console.log(html)
-  },
-  1000
-)
+makeRemotelyCallable({
+    freezeDry,
+})
